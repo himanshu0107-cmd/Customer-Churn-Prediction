@@ -37,10 +37,37 @@ Customer Churn Prediction/
 
 ## Models Trained
 
-- Logistic Regression
-- Random Forest
-- Gradient Boosting
-- XGBoost
+4 classification models are trained and compared in this project:
+
+### 1. Logistic Regression
+- A simple and interpretable linear model
+- Predicts the probability of churn using a sigmoid function
+- Works well when the relationship between features and churn is roughly linear
+- Features are scaled using `StandardScaler` before training
+- Best performing model in this project (AUC = 0.8463)
+
+### 2. Random Forest
+- An ensemble of multiple decision trees
+- Each tree is trained on a random subset of data and features
+- Final prediction is made by majority voting across all trees
+- Naturally handles non-linear relationships and feature interactions
+- Provides built-in feature importance scores
+
+### 3. Gradient Boosting
+- Builds trees sequentially — each tree corrects the errors of the previous one
+- Focuses more on hard-to-predict customers with each iteration
+- Slower to train but often very accurate
+- Good at capturing complex patterns in customer behavior
+
+### 4. XGBoost (Extreme Gradient Boosting)
+- An optimized and faster version of Gradient Boosting
+- Uses regularization to prevent overfitting
+- Highly popular in industry and ML competitions
+- Handles missing values and large datasets efficiently
+
+---
+
+### Evaluation Metrics Used
 
 Each model is evaluated using:
 - Classification Report (Precision, Recall, F1-score)
